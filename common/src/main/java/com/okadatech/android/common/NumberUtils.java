@@ -1,9 +1,9 @@
 package com.okadatech.android.common;
 
 @SuppressWarnings("WeakerAccess")
-public final class NumberUtil {
+public final class NumberUtils {
 
-    private NumberUtil() { }
+    private NumberUtils() { }
 
     public static byte parseByte(final String s) {
         try {
