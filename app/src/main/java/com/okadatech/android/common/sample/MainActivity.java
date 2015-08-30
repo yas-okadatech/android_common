@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.okadatech.android.common.Browser;
 import com.okadatech.android.common.log.DLog;
 
 public class MainActivity extends AppCompatActivity {
@@ -21,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
         DLog.e(TAG, "test %s", "hello");
         DLog.e(TAG, "test");
         Log.e(TAG, "log");
+
+        Browser.show(getApplicationContext(), "http://google.com");
     }
 
     @Override
