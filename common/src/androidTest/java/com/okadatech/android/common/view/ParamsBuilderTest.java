@@ -9,6 +9,7 @@ public class ParamsBuilderTest extends TestCase {
 
     public void testViewGroup() {
         final ViewGroup.LayoutParams params = new ParamsBuilder()
+                .viewGroup()
                 .build();
         assertEquals(ViewGroup.LayoutParams.WRAP_CONTENT, params.width);
         assertEquals(ViewGroup.LayoutParams.WRAP_CONTENT, params.height);
@@ -16,6 +17,7 @@ public class ParamsBuilderTest extends TestCase {
 
     public void testViewGroupWidthHeight() {
         final ViewGroup.LayoutParams params = new ParamsBuilder()
+                .viewGroup()
                 .width(1)
                 .height(2)
                 .build();
@@ -25,6 +27,7 @@ public class ParamsBuilderTest extends TestCase {
 
     public void testViewGroupMargin() {
         final ViewGroup.MarginLayoutParams params = new ParamsBuilder()
+                .viewGroup()
                 .margin(1, 2, 3, 4)
                 .build();
         assertEquals(ViewGroup.LayoutParams.WRAP_CONTENT, params.width);
