@@ -7,7 +7,8 @@ import android.widget.LinearLayout;
  * ParamsLinearLayoutBuilder.
  */
 public class ParamsLinearLayoutBuilder extends ParamsViewGroupBuilder {
-    private int mWeight;
+
+    private float mWeight;
 
     ParamsLinearLayoutBuilder() {
     }
@@ -19,5 +20,16 @@ public class ParamsLinearLayoutBuilder extends ParamsViewGroupBuilder {
         } else {
             return new LinearLayout.MarginLayoutParams(mWidth, mHeight);
         }
+    }
+
+    public ParamsLinearLayoutBuilder weight(final float weight) {
+        mWeight = weight;
+        return this;
+    }
+
+    @Override
+    void onBuild(final ViewGroup.LayoutParams layoutParams) {
+        final LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) layoutParams;
+        params.weight = mWeight;
     }
 }

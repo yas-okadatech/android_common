@@ -17,6 +17,7 @@ public class ParamsViewGroupBuilder {
     public <T extends ViewGroup.LayoutParams> T build() {
         final ViewGroup.LayoutParams params = createLayoutParams();
         buildMargin(params);
+        onBuild(params);
         //noinspection unchecked
         return (T) params;
     }
@@ -36,6 +37,10 @@ public class ParamsViewGroupBuilder {
 
         ((ViewGroup.MarginLayoutParams) params).setMargins(mMargin.left, mMargin.top,
                 mMargin.right, mMargin.bottom);
+    }
+
+    void onBuild(final ViewGroup.LayoutParams layoutParams) {
+        // noop
     }
 
     public ParamsViewGroupBuilder width(final int width) {

@@ -2,6 +2,7 @@ package com.okadatech.android.common.view;
 
 
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import junit.framework.TestCase;
 
@@ -36,5 +37,15 @@ public class ParamsBuilderTest extends TestCase {
         assertEquals(2, params.topMargin);
         assertEquals(3, params.rightMargin);
         assertEquals(4, params.bottomMargin);
+    }
+
+    public void testLinearLayout() {
+        final LinearLayout.LayoutParams params = new ParamsBuilder()
+                .linearLayout()
+                .weight(1.5f)
+                .build();
+        assertEquals(ViewGroup.LayoutParams.WRAP_CONTENT, params.width);
+        assertEquals(ViewGroup.LayoutParams.WRAP_CONTENT, params.height);
+        assertEquals(1.5f, params.weight);
     }
 }
