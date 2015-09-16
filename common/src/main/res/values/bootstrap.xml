@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- http://bootstrapdocs.com/v2.0.4/docs/less.html -->
+
+<resources>
+    <!-- Scaffolding and links -->
+    <color name="bootstrap_bodyBackground">@color/bootstrap_white</color>
+    <color name="bootstrap_textColor">@color/bootstrap_grayDark</color>
+    <color name="bootstrap_linkColor">#08c</color>
+    <color name="bootstrap_linkColorHover">#005580</color>
+
+    <!-- Grayscale colors -->
+    <color name="bootstrap_black">#000</color>
+    <color name="bootstrap_grayDarker">#222</color>
+    <color name="bootstrap_grayDark">#333</color>
+    <color name="bootstrap_gray">#555</color>
+    <color name="bootstrap_grayLight">#999</color>
+    <color name="bootstrap_grayLighter">#eee</color>
+    <color name="bootstrap_white">#fff</color>
+
+    <!-- Accent colors -->
+    <color name="bootstrap_blue">#049cdb</color>
+    <color name="bootstrap_green">#46a546</color>
+    <color name="bootstrap_red">#9d261d</color>
+    <color name="bootstrap_yellow">#ffc40d</color>
+    <color name="bootstrap_orange">#f89406</color>
+    <color name="bootstrap_pink">#c3325f</color>
+    <color name="bootstrap_purple">#7a43b6</color>
+
+    <!-- Components buttons -->
+    <color name="bootstrap_btnBackground">@color/bootstrap_white</color>
+    <color name="bootstrap_btnBackgroundHighlight">#e6e6e6</color>
+    <color name="bootstrap_btnBorder">#ccc</color>
+    <color name="bootstrap_btnPrimaryBackground">@color/bootstrap_linkColor</color>
+    <color name="bootstrap_btnPrimaryBackgroundHighlight">#05c</color>
+    <color name="bootstrap_btnInfoBackground">#5bc0de</color>
+    <color name="bootstrap_btnInfoBackgroundHighlight">#2f96b4</color>
+    <color name="bootstrap_btnSuccessBackground">#62c462</color>
+    <color name="bootstrap_btnSuccessBackgroundHighlight">#51a351</color>
+    <color name="bootstrap_btnWarningBackground">#fbb450</color>
+    <color name="bootstrap_btnWarningBackgroundHighlight">@color/bootstrap_orange</color>
+    <color name="bootstrap_btnDangerBackground">#ee5f5b</color>
+    <color name="bootstrap_btnDangerBackgroundHighlight">#bd362f</color>
+    <color name="bootstrap_btnInverseBackground">@color/bootstrap_gray</color>
+    <color name="bootstrap_btnInverseBackgroundHighlight">@color/bootstrap_grayDarker</color>
+
+    <!-- Components Forms -->
+    <color name="bootstrap_placeholderText">@color/bootstrap_grayLight</color>
+    <color name="bootstrap_inputBackground">@color/bootstrap_white</color>
+    <color name="bootstrap_inputBorder">#ccc</color>
+    <dimen name="bootstrap_inputBorderRadius">3dp</dimen>
+    <color name="bootstrap_inputDisabledBackground">@color/bootstrap_grayLighter</color>
+    <color name="bootstrap_formActionsBackground">#f5f5f5</color>
+
+    <!-- Components Form states and alerts -->
+    <color name="bootstrap_warningText">#c09853</color>
+    <color name="bootstrap_warningBackground">#f3edd2</color>
+    <color name="bootstrap_errorText">#b94a48</color>
+    <color name="bootstrap_errorBackground">#f2dede</color>
+    <color name="bootstrap_successText">#468847</color>
+    <color name="bootstrap_successBackground">#dff0d8</color>
+    <color name="bootstrap_infoText">#3a87ad</color>
+    <color name="bootstrap_infoBackground">#d9edf7</color>
+</resources>
