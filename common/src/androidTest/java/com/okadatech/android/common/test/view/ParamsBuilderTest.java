@@ -2,6 +2,7 @@ package com.okadatech.android.common.test.view;
 
 
 import android.support.test.runner.AndroidJUnit4;
+import android.view.Gravity;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
@@ -52,6 +53,20 @@ public class ParamsBuilderTest {
 
     @Test
     public void verifyLinearLayout() {
+        final LinearLayout.LayoutParams expected = new LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+
+        final LinearLayout.LayoutParams params = new ParamsBuilder()
+                .linearLayout()
+                .build();
+        assertThat(params.width, is(ViewGroup.LayoutParams.WRAP_CONTENT));
+        assertThat(params.height, is(ViewGroup.LayoutParams.WRAP_CONTENT));
+        assertThat(params.weight, is(expected.weight));
+        assertThat(params.gravity, is(expected.gravity));
+    }
+
+    @Test
+    public void verifyLinearLayoutWeight() {
         final LinearLayout.LayoutParams params = new ParamsBuilder()
                 .linearLayout()
                 .weight(1.5f)
@@ -59,5 +74,29 @@ public class ParamsBuilderTest {
         assertThat(params.width, is(ViewGroup.LayoutParams.WRAP_CONTENT));
         assertThat(params.height, is(ViewGroup.LayoutParams.WRAP_CONTENT));
         assertThat(params.weight, is(1.5f));
+    }
+
+    @Test
+    public void verifyLinearLayoutAddGravity() {
+        final LinearLayout.LayoutParams params = new ParamsBuilder()
+                .linearLayout()
+                .addGravity(Gravity.CENTER_HORIZONTAL)
+                .addGravity(Gravity.CENTER_VERTICAL)
+                .build();
+        assertThat(params.width, is(ViewGroup.LayoutParams.WRAP_CONTENT));
+        assertThat(params.height, is(ViewGroup.LayoutParams.WRAP_CONTENT));
+        assertThat(params.gravity, is(Gravity.CENTER));
+    }
+
+    @Test
+    public void verifyLinearLayoutRemoveGravity() {
+        final LinearLayout.LayoutParams params = new ParamsBuilder()
+                .linearLayout()
+                .addGravity(Gravity.CENTER)
+                .removeGravity(Gravity.CENTER_VERTICAL)
+                .build();
+        assertThat(params.width, is(ViewGroup.LayoutParams.WRAP_CONTENT));
+        assertThat(params.height, is(ViewGroup.LayoutParams.WRAP_CONTENT));
+        assertThat(params.gravity, is(Gravity.CENTER_HORIZONTAL));
     }
 }
