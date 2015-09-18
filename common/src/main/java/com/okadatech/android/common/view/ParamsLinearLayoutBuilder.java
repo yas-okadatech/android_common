@@ -16,11 +16,7 @@ public class ParamsLinearLayoutBuilder extends ParamsViewGroupBuilder {
 
     @Override
     ViewGroup.LayoutParams createLayoutParams() {
-        if (mMargin == null) {
-            return new LinearLayout.LayoutParams(mWidth, mHeight);
-        } else {
-            return new LinearLayout.MarginLayoutParams(mWidth, mHeight);
-        }
+        return new LinearLayout.LayoutParams(mWidth, mHeight);
     }
 
     @Override
