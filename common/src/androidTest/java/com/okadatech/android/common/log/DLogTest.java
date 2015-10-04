@@ -5,57 +5,55 @@ import junit.framework.TestCase;
 
 public class DLogTest extends TestCase {
 
-    private static final String TAG = DLogTest.class.getSimpleName();
-
     public void testPrintln() {
-        DLog.println(DLog.DEBUG, TAG, "testPrintln");
+        DLog.println(DLog.DEBUG, "test", "testPrintln");
     }
 
     public void testCriticalStringString() {
-        DLog.critical(TAG, "testCriticalStringString");
+        DLog.critical("testCriticalStringString");
     }
 
     public void testCriticalStringStringObjectArray() {
-        DLog.critical(TAG, "%s", "testCriticalStringStringObjectArray");
+        DLog.critical("%s", "testCriticalStringStringObjectArray");
     }
 
     public void testDStringString() {
-        DLog.d(TAG, "testDStringString");
+        DLog.d("testDStringString");
     }
 
     public void testDStringStringObjectArray() {
-        DLog.d(TAG, "%s", "testDStringStringObjectArray");
+        DLog.d("%s", "testDStringStringObjectArray");
     }
 
     public void testEStringString() {
-        DLog.e(TAG, "testEStringString");
+        DLog.e("testEStringString");
     }
 
     public void testEStringStringObjectArray() {
-        DLog.e(TAG, "%s", "testEStringStringObjectArray");
+        DLog.e("%s", "testEStringStringObjectArray");
     }
 
     public void testIStringString() {
-        DLog.i(TAG, "testIStringString");
+        DLog.i("testIStringString");
     }
 
     public void testIStringStringObjectArray() {
-        DLog.i(TAG, "%s", "testIStringStringObjectArray");
+        DLog.i("%s", "testIStringStringObjectArray");
     }
-    
+
     public void testVStringString() {
-        DLog.v(TAG, "testVStringString");
+        DLog.v("testVStringString");
     }
 
     public void testVStringStringObjectArray() {
-        DLog.v(TAG, "%s", "testVStringStringObjectArray");
+        DLog.v("%s", "testVStringStringObjectArray");
     }
 
     public void testWStringString() {
-        DLog.w(TAG, "testWStringString");
+        DLog.w("testWStringString");
     }
 
     public void testWStringStringObjectArray() {
-        DLog.w(TAG, "%s", "testWStringStringObjectArray");
-    }    
+        DLog.w("%s", "testWStringStringObjectArray");
+    }
 }

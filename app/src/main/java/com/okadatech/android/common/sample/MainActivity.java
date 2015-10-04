@@ -10,18 +10,15 @@ import com.okadatech.android.common.Browser;
 import com.okadatech.android.common.log.DLog;
 
 public class MainActivity extends AppCompatActivity {
-    @SuppressWarnings("unused")
-    private static final String TAG = MainActivity.class.getSimpleName();
-
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         DLog.setLoggable(BuildConfig.DEBUG);
-        DLog.e(TAG, "test %s", "hello");
-        DLog.e(TAG, "test");
-        Log.e(TAG, "log");
+        DLog.e("test %s", "hello");
+        DLog.e("test");
+        Log.e("aaa", "log");
 
         Browser.show(getApplicationContext(), "http://google.com");
     }
