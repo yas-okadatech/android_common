@@ -1,6 +1,7 @@
 package com.okadatech.android.common.log;
 
 import android.util.Log;
+import android.util.Pair;
 
 import com.okadatech.android.common.BuildConfig;
 
@@ -29,36 +30,38 @@ public final class DLog {
         sIsLoggable = loggable;
     }
 
-    private static StackTraceElement getStackTraceElement() {
+    private static Pair<StackTraceElement, String> getStackTraceElement() {
         for (final StackTraceElement element : new Throwable().getStackTrace()) {
             if (!"DLog.java".equals(element.getFileName())) {
-                return element;
+                final String filename = element.getFileName();
+                final String tag = filename.substring(0, filename.indexOf('.'));
+                return Pair.create(element, tag);
             }
         }
 
         throw new IllegalStateException();
     }
 
-    private static void log(final int priority, final String tag, final String msg) {
-        final StackTraceElement element = getStackTraceElement();
-        Log.println(priority, tag, "[" + element.getFileName() + ":" + element.getLineNumber()
-                + "]" + msg);
+    private static void log(final int priority, final String msg) {
+        final Pair<StackTraceElement, String> element = getStackTraceElement();
+        Log.println(priority, element.second,
+                "[" + element.first.getFileName() + ":" + element.first.getLineNumber()
+                        + "]" + msg);
     }
 
-    private static void log(final int priority, final String tag, final String format,
-                            final Object... args) {
-        final StackTraceElement element = getStackTraceElement();
+    private static void log(final int priority, final String format, final Object... args) {
+        final Pair<StackTraceElement, String> element = getStackTraceElement();
         final StringBuilder sb = new StringBuilder();
         sb.append("[");
-        sb.append(element.getFileName());
+        sb.append(element.first.getFileName());
         sb.append(":");
-        sb.append(element.getLineNumber());
+        sb.append(element.first.getLineNumber());
         sb.append("]");
 
         final Formatter formatter = new Formatter(sb);
         formatter.format(format, args);
 
-        Log.println(priority, tag, sb.toString());
+        Log.println(priority, element.second, sb.toString());
         formatter.close();
     }
 
@@ -66,91 +69,91 @@ public final class DLog {
 
     }
 
-    public static void critical(final String tag, final String msg) {
-        log(ERROR, tag, msg);
+    public static void critical(final String msg) {
+        log(ERROR, msg);
     }
 
-    public static void critical(final String tag, final String format, final Object... args) {
-        log(ERROR, tag, format, args);
+    public static void critical(final String format, final Object... args) {
+        log(ERROR, format, args);
     }
 
-    public static void d(final String tag, final String msg) {
+    public static void d(final String msg) {
         if (!isLoggable()) {
             return;
         }
 
-        log(DEBUG, tag, msg);
+        log(DEBUG, msg);
     }
 
-    public static void d(final String tag, final String format, final Object... args) {
+    public static void d(final String format, final Object... args) {
         if (!isLoggable()) {
             return;
         }
 
-        log(DEBUG, tag, format, args);
+        log(DEBUG, format, args);
     }
 
-    public static void e(final String tag, final String msg) {
+    public static void e(final String msg) {
         if (!isLoggable()) {
             return;
         }
 
-        log(ERROR, tag, msg);
+        log(ERROR, msg);
     }
 
-    public static void e(final String tag, final String format, final Object... args) {
+    public static void e(final String format, final Object... args) {
         if (!isLoggable()) {
             return;
         }
 
-        log(ERROR, tag, format, args);
+        log(ERROR, format, args);
     }
 
-    public static void i(final String tag, final String msg) {
+    public static void i(final String msg) {
         if (!isLoggable()) {
             return;
         }
 
-        log(INFO, tag, msg);
+        log(INFO, msg);
     }
 
-    public static void i(final String tag, final String format, final Object... args) {
+    public static void i(final String format, final Object... args) {
         if (!isLoggable()) {
             return;
         }
 
-        log(INFO, tag, format, args);
+        log(INFO, format, args);
     }
 
-    public static void v(final String tag, final String msg) {
+    public static void v(final String msg) {
         if (!isLoggable()) {
             return;
         }
 
-        log(VERBOSE, tag, msg);
+        log(VERBOSE, msg);
     }
 
-    public static void v(final String tag, final String format, final Object... args) {
+    public static void v(final String format, final Object... args) {
         if (!isLoggable()) {
             return;
         }
 
-        log(VERBOSE, tag, format, args);
+        log(VERBOSE, format, args);
     }
 
-    public static void w(final String tag, final String msg) {
+    public static void w(final String msg) {
         if (!isLoggable()) {
             return;
         }
 
-        log(WARN, tag, msg);
+        log(WARN, msg);
     }
 
-    public static void w(final String tag, final String format, final Object... args) {
+    public static void w(final String format, final Object... args) {
         if (!isLoggable()) {
             return;
         }
 
-        log(WARN, tag, format, args);
+        log(WARN, format, args);
     }
 }
