@@ -12,7 +12,7 @@ public final class CollectionUtils {
         return c == null || c.isEmpty();
     }
 
-    public static <T> T last(List<T> c) {
+    public static <T> T last(final List<T> c) {
         return isNullOrEmpty(c)
                 ? null
                 : c.get(c.size() - 1);
