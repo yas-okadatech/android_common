@@ -3,3 +3,8 @@
 (https://bintray.com/yas-okadatech/maven/android_common/_latestVersion)
 
 # android_common
+
+## ToDo
+* ParamsBuilder
+    * staticに
+    * match, wrapをセットするメソッド
