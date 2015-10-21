@@ -3,19 +3,17 @@ package com.okadatech.android.common.view;
 /**
  * ParamsBuilder.
  */
-public class ParamsBuilder {
+public final class ParamsBuilder {
 
-    private int mGravity;
-
-    public ParamsViewGroupBuilder viewGroup() {
+    public static ParamsViewGroupBuilder viewGroup() {
         return new ParamsViewGroupBuilder();
     }
 
-    public ParamsLinearLayoutBuilder linearLayout() {
+    public static ParamsLinearLayoutBuilder linearLayout() {
         return new ParamsLinearLayoutBuilder();
     }
 
-    public ParamsRelativeLayoutBuilder relativeLayout() {
+    public static ParamsRelativeLayoutBuilder relativeLayout() {
         return new ParamsRelativeLayoutBuilder();
     }
 }

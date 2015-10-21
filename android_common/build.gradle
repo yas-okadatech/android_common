@@ -13,7 +13,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
-def VERSION='0.0.1.20151011'
+def VERSION='0.0.1.20151021'
 
 android {
     compileSdkVersion 23
@@ -45,8 +45,8 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    provided 'com.android.support:support-v4:23.0.1'
-    provided 'com.android.support:support-annotations:23.0.1'
+    provided 'com.android.support:support-v4:23.1.0'
+    provided 'com.android.support:support-annotations:23.1.0'
 
     androidTestCompile 'com.android.support.test:runner:0.4'
     androidTestCompile 'com.android.support.test:rules:0.4'

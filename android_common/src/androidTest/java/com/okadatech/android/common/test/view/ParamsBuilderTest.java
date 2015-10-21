@@ -21,7 +21,7 @@ public class ParamsBuilderTest {
 
     @Test
     public void verifyViewGroup() {
-        final ViewGroup.LayoutParams params = new ParamsBuilder()
+        final ViewGroup.LayoutParams params = ParamsBuilder
                 .viewGroup()
                 .build();
         assertThat(params.width, is(ViewGroup.LayoutParams.WRAP_CONTENT));
@@ -30,7 +30,7 @@ public class ParamsBuilderTest {
 
     @Test
     public void verifyViewGroupWidthHeight() {
-        final ViewGroup.LayoutParams params = new ParamsBuilder()
+        final ViewGroup.LayoutParams params = ParamsBuilder
                 .viewGroup()
                 .width(1)
                 .height(2)
@@ -41,7 +41,7 @@ public class ParamsBuilderTest {
 
     @Test
     public void verifyViewGroupMargin() {
-        final ViewGroup.MarginLayoutParams params = new ParamsBuilder()
+        final ViewGroup.MarginLayoutParams params = ParamsBuilder
                 .viewGroup()
                 .margin(1, 2, 3, 4)
                 .build();
@@ -58,7 +58,7 @@ public class ParamsBuilderTest {
         final LinearLayout.LayoutParams expected = new LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 
-        final LinearLayout.LayoutParams params = new ParamsBuilder()
+        final LinearLayout.LayoutParams params = ParamsBuilder
                 .linearLayout()
                 .build();
         assertThat(params.width, is(ViewGroup.LayoutParams.WRAP_CONTENT));
@@ -73,7 +73,7 @@ public class ParamsBuilderTest {
 
     @Test
     public void verifyLinearLayoutMargin() {
-        final LinearLayout.MarginLayoutParams params = new ParamsBuilder()
+        final LinearLayout.MarginLayoutParams params = ParamsBuilder
                 .linearLayout()
                 .margin(1, 2, 3, 4)
                 .build();
@@ -87,7 +87,7 @@ public class ParamsBuilderTest {
 
     @Test
     public void verifyLinearLayoutWeight() {
-        final LinearLayout.LayoutParams params = new ParamsBuilder()
+        final LinearLayout.LayoutParams params = ParamsBuilder
                 .linearLayout()
                 .weight(1.5f)
                 .build();
@@ -98,7 +98,7 @@ public class ParamsBuilderTest {
 
     @Test
     public void verifyLinearLayoutAddGravity() {
-        final LinearLayout.LayoutParams params = new ParamsBuilder()
+        final LinearLayout.LayoutParams params = ParamsBuilder
                 .linearLayout()
                 .addGravity(Gravity.CENTER_HORIZONTAL)
                 .addGravity(Gravity.CENTER_VERTICAL)
@@ -110,7 +110,7 @@ public class ParamsBuilderTest {
 
     @Test
     public void verifyLinearLayoutRemoveGravity() {
-        final LinearLayout.LayoutParams params = new ParamsBuilder()
+        final LinearLayout.LayoutParams params = ParamsBuilder
                 .linearLayout()
                 .addGravity(Gravity.CENTER)
                 .removeGravity(Gravity.CENTER_VERTICAL)
@@ -125,7 +125,7 @@ public class ParamsBuilderTest {
         final RelativeLayout.LayoutParams expected = new RelativeLayout.LayoutParams(
                 ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 
-        final RelativeLayout.LayoutParams params = new ParamsBuilder()
+        final RelativeLayout.LayoutParams params = ParamsBuilder
                 .relativeLayout()
                 .build();
         assertThat(params.width, is(ViewGroup.LayoutParams.WRAP_CONTENT));
@@ -141,7 +141,7 @@ public class ParamsBuilderTest {
         final RelativeLayout.LayoutParams expected = new RelativeLayout.LayoutParams(
                 ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 
-        final RelativeLayout.LayoutParams params = new ParamsBuilder()
+        final RelativeLayout.LayoutParams params = ParamsBuilder
                 .relativeLayout()
                 .addRule(RelativeLayout.ALIGN_PARENT_TOP)
                 .addRule(RelativeLayout.CENTER_HORIZONTAL)
@@ -172,7 +172,7 @@ public class ParamsBuilderTest {
         final RelativeLayout.LayoutParams expected = new RelativeLayout.LayoutParams(
                 ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 
-        final RelativeLayout.LayoutParams params = new ParamsBuilder()
+        final RelativeLayout.LayoutParams params = ParamsBuilder
                 .relativeLayout()
                 .addRule(RelativeLayout.ALIGN_BOTTOM, 3)
                 .addRule(RelativeLayout.ALIGN_TOP, 2)
